@@ -321,8 +321,8 @@ def build(args):
         # for panoptic, we just add a num_classes that is large enough to hold
         # max_obj_id + 1, but the exact value doesn't really matter
         num_classes = 250
-    if args.dataset_file == 'flickr_logos_27':
-        num_classes = 27  # max_obj_id: 26
+    if args.dataset_file == 'car_logos':
+        num_classes = 32  # max_obj_id: 31
     device = torch.device(args.device)
 
     backbone = build_backbone(args)
