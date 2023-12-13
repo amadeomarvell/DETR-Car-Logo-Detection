@@ -14,7 +14,7 @@ _C.CROPPED_ANNOT_FILE_TEST = os.path.join(
 
 _C.CLASS_NAMES = ['Audi', 'Chrysler', 'Citroen', 'GMC', 'Honda', 'Hyundai', 'Infiniti', 'Mazda', 'Mercedes', 'Mitsubishi', 
                   'Nissan', 'Renault', 'Toyota', 'Volkswagen', 'acura', 'bmw', 'cadillac', 'chevrolet', 'dodge', 'ford', 'jeep', 
-                  'kia', 'lexus', 'lincoln', 'mini', 'porsche', 'ram', 'range rover', 'skoda', 'subaru', 'suzuki', 'volvo']
+                  'kia', 'lexus', 'lincoln', 'mini', 'porsche', 'ram', 'range-rover', 'skoda', 'subaru', 'suzuki', 'volvo']
 
 
 def get_cfg_defaults():
