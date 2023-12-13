@@ -108,7 +108,7 @@ item {
 }
 item {
   id: 27
-  display_name: "range rover"
+  display_name: "range-rover"
 }
 item {
   id: 28
