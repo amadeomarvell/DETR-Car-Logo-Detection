@@ -6,11 +6,11 @@ from .coco import CocoDetection, make_coco_transforms
 def build(image_set, args):
     root = Path(args.coco_path)
     assert root.exists(), f'provided root path {root} does not exist'
-    train_json = 'flickr_logos_27_train.json'
-    test_json = 'flickr_logos_27_test.json'
+    train_json = 'car_logos_train.json'
+    test_json = 'car_logos_test.json'
     PATHS = {
-        "train": (root / 'flickr_logos_27_dataset_images', root / train_json),
-        "val": (root / 'flickr_logos_27_dataset_images', root / test_json),
+        "train": (root / 'Car_Logo_Dataset_Images', root / train_json),
+        "val": (root / 'Car_Logo_Dataset_Images', root / test_json),
     }
 
     img_folder, ann_file = PATHS[image_set]
