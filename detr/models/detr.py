@@ -20,7 +20,8 @@ from .transformer import build_transformer
 
 class DETR(nn.Module):
     """ This is the DETR module that performs object detection """
-    def __init__(self, backbone, transformer, num_classes, num_queries, aux_loss=False):
+
+    def __init__(self, backbone, transformer, num_classes, num_queries, aux_loss=False, freeze_detr=False):
         """ Initializes the model.
         Parameters:
             backbone: torch module of the backbone to be used. See backbone.py
@@ -31,6 +32,10 @@ class DETR(nn.Module):
             aux_loss: True if auxiliary decoding losses (loss at each decoder layer) are to be used.
         """
         super().__init__()
+        if freeze_detr:
+            for p in self.parameters():
+                p.requires_grad_(False)
+
         self.num_queries = num_queries
         self.transformer = transformer
         hidden_dim = transformer.d_model
@@ -86,6 +91,7 @@ class SetCriterion(nn.Module):
         1) we compute hungarian assignment between ground truth boxes and the outputs of the model
         2) we supervise each pair of matched ground-truth / prediction (supervise class and box)
     """
+
     def __init__(self, num_classes, matcher, weight_dict, eos_coef, losses):
         """ Create the criterion.
         Parameters:
@@ -315,6 +321,8 @@ def build(args):
         # for panoptic, we just add a num_classes that is large enough to hold
         # max_obj_id + 1, but the exact value doesn't really matter
         num_classes = 250
+    if args.dataset_file == 'flickr_logos_27':
+        num_classes = 27  # max_obj_id: 26
     device = torch.device(args.device)
 
     backbone = build_backbone(args)
@@ -327,6 +335,7 @@ def build(args):
         num_classes=num_classes,
         num_queries=args.num_queries,
         aux_loss=args.aux_loss,
+        freeze_detr=True
     )
     if args.masks:
         model = DETRsegm(model, freeze_detr=(args.frozen_weights is not None))
