@@ -92,37 +92,41 @@ item {
 }
 item {
   id: 24
-  display_name: "lincoln"
+  display_name: "license-plate"
 }
 item {
   id: 25
-  display_name: "mini"
+  display_name: "lincoln"
 }
 item {
   id: 26
-  display_name: "porsche"
+  display_name: "mini"
 }
 item {
   id: 27
-  display_name: "ram"
+  display_name: "porsche"
 }
 item {
   id: 28
-  display_name: "range-rover"
+  display_name: "ram"
 }
 item {
   id: 29
-  display_name: "skoda"
+  display_name: "range-rover"
 }
 item {
   id: 30
-  display_name: "subaru"
+  display_name: "skoda"
 }
 item {
   id: 31
-  display_name: "suzuki"
+  display_name: "subaru"
 }
 item {
   id: 32
+  display_name: "suzuki"
+}
+item {
+  id: 33
   display_name: "volvo"
 }
