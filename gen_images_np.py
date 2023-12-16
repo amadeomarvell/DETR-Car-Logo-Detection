@@ -37,12 +37,12 @@ def get_images(image_dir, annot):
 
 if __name__ == '__main__':
     # Load images and visualize
-    DATA_ROOT_DIR = 'flickr_logos_27_dataset'
-    IMAGE_DIR = os.path.join(DATA_ROOT_DIR, 'flickr_logos_27_dataset_images')
+    DATA_ROOT_DIR = 'Car_Logo_Dataset'
+    IMAGE_DIR = os.path.join(DATA_ROOT_DIR, 'Car_Logo_Dataset_V_5_Images')
     TRAIN_ANNOT_FILE = os.path.join(
-        DATA_ROOT_DIR, 'flickr_logos_27_dataset_training_set_annotation_cropped.txt')
+        DATA_ROOT_DIR, 'car_logos_dataset_training_set_annotation_cropped.txt')
     TEST_ANNOT_FILE = os.path.join(
-        DATA_ROOT_DIR, 'flickr_logos_27_dataset_test_set_annotation_cropped.txt')
+        DATA_ROOT_DIR, 'car_logos_dataset_test_set_annotation_cropped.txt')
 
     train_images_np = get_images(IMAGE_DIR, TRAIN_ANNOT_FILE)
     test_images_np = get_images(IMAGE_DIR, TEST_ANNOT_FILE)
