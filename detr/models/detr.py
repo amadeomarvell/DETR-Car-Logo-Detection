@@ -322,7 +322,7 @@ def build(args):
         # max_obj_id + 1, but the exact value doesn't really matter
         num_classes = 250
     if args.dataset_file == 'car_logos':
-        num_classes = 32  # max_obj_id: 31
+        num_classes = 33  # max_obj_id: 31
     device = torch.device(args.device)
 
     backbone = build_backbone(args)
