@@ -9,8 +9,8 @@ def build(image_set, args):
     train_json = 'car_logos_train.json'
     test_json = 'car_logos_test.json'
     PATHS = {
-        "train": (root / 'Car_Logo_Dataset_Images', root / train_json),
-        "val": (root / 'Car_Logo_Dataset_Images', root / test_json),
+        "train": (root / 'Car_Logo_Dataset_V_5_Images', root / train_json),
+        "val": (root / 'Car_Logo_Dataset_V_5_Images', root / test_json),
     }
 
     img_folder, ann_file = PATHS[image_set]
